@@ -1,0 +1,14 @@
+diskpart
+lis dis
+sel dis 0
+lis par
+sel par 4
+delete par override
+
+create par efi size=100
+format quick fs=fat32
+assign letter = N
+lis vol
+exit
+
+bcdboot C:\windows /S N: /F UEFI
