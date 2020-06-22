@@ -8,7 +8,9 @@ delete par override
 create par efi size=100
 format quick fs=fat32
 assign letter = N
+rem смотрим букву тома с виндой
 lis vol
 exit
 
+rem Если винда на С
 bcdboot C:\windows /S N: /F UEFI
